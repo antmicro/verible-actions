@@ -22,6 +22,9 @@ inputs:
   github_token:
     description: 'GITHUB_TOKEN'
     default: ''
+  reviewdog_reporter:
+    description: '-reporter option to reviewdog'
+    default: 'github-pr-review'
 runs:
   using: 'composite'
   steps:
@@ -46,7 +49,7 @@ runs:
         echo "Running reviewdog"
         cat "${{ inputs.log_file }}" |
         ./bin/reviewdog -efm="%f:%l:%c: %m" \
-        -reporter=github-pr-review \
+        -reporter="${{ inputs.reviewdog_reporter }}" \
         -fail-on-error="false" \
         -name="verible-verilog-lint" \
         -diff="git diff FETCH_HEAD" || cat "${{ inputs.log_file }}"

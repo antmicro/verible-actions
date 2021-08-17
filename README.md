@@ -13,6 +13,8 @@ The GitHub Token input is used to provide
 access to the PR.
 If you don't wish to use the automatic PR review,
 you can omit the ``github_token`` input.
+If you'd like to use a reporter of reviewdog other than ``github-pr-review``,
+you can pass its name in the input ``reviewdog_reporter``.
 
 Here's a basic example to lint all ``*.v`` and ``*.sv`` files:
 ```yaml
