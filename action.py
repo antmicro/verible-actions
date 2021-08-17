@@ -96,10 +96,10 @@ def main(conf_file, extra_opts, exclude_paths, log_file, path):
     print(f'{files=}')
 
     if exclude_paths:
-        for path in unwrap_from_gha_string(exclude_paths):
+        for p in unwrap_from_gha_string(exclude_paths):
             # get rid of every file which starts with this path
-            print(f'excluded path: {path}')
-            files = {f for f in files if not f.startswith(path)}
+            print(f'excluded path: {p}')
+            files = {f for f in files if not f.startswith(p)}
 
     if not files:
         warnings.warn("File set is empty, the action has nothing to do.")
