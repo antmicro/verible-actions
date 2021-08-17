@@ -49,6 +49,7 @@ runs:
         -reporter=github-pr-review \
         -fail-on-error="false" \
         -name="verible-verilog-lint" \
+        -diff="git diff FETCH_HEAD" \
         -filter-mode="nofilter" || cat "${{ inputs.log_file }}"
         exit $exitcode
       shell: bash
