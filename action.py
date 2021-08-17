@@ -97,7 +97,7 @@ def main(conf_file, extra_opts, exclude_paths, log_file, path):
     print(f'{exclude_paths=}')
 
     if exclude_paths:
-        for p in unwrap_from_gha_string(exclude_paths):
+        for p in exclude_paths.split():
             # get rid of every file which starts with this path
             print(f'excluded path: {p}')
             files = {f for f in files if not f.startswith(p)}
