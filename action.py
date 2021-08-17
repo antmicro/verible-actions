@@ -94,6 +94,7 @@ def main(conf_file, extra_opts, exclude_paths, log_file, path):
     # set of target files to lint
     files = find_sources_in_paths(paths)
     print(f'{files=}')
+    print(f'{exclude_paths=}')
 
     if exclude_paths:
         for p in unwrap_from_gha_string(exclude_paths):
