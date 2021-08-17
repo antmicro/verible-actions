@@ -48,6 +48,7 @@ runs:
         ./bin/reviewdog -efm="%f:%l:%c: %m" \
         -reporter=github-pr-review \
         -fail-on-error="false" \
+        -name="verible-verilog-lint" \
         -filter-mode="nofilter" || cat "${{ inputs.log_file }}"
         exit $exitcode
       shell: bash
