@@ -39,6 +39,7 @@ runs:
     - run: curl -sfL https://raw.githubusercontent.com/reviewdog/reviewdog/master/install.sh | sh -s
       shell: bash
     - run: |
+        touch "${{ inputs.log_file }}"
         export REVIEWDOG_GITHUB_API_TOKEN="${{ inputs.github_token }}"
         ${{ github.action_path }}/action.py \
         --conf-file "${{ inputs.config_file }}" \
