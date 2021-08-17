@@ -93,10 +93,12 @@ def main(conf_file, extra_opts, exclude_paths, log_file, path):
     print(f'{paths=}')
     # set of target files to lint
     files = find_sources_in_paths(paths)
+    print(f'{files=}')
 
     if exclude_paths:
         for path in unwrap_from_gha_string(exclude_paths):
             # get rid of every file which starts with this path
+            print(f'excluded path: {path}')
             files = {f for f in files if not f.startswith(path)}
 
     if not files:
