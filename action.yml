@@ -1,5 +1,5 @@
 name: 'verible-linter'
-description: 'This action checks Verilog/SystemVerilog code for formating'
+description: 'This action lints Verilog/SystemVerilog code'
 author: 'Antmicro'
 inputs:
   config_file:
