@@ -1,6 +1,10 @@
 Verible Lint Action
 ===================
 
+This repository has been moved to
+[chipsalliance/verible-linter-action](https://github.com/chipsalliance/verible-linter-action)
+and is no longer maintained here.
+
 Usage
 -----
 
